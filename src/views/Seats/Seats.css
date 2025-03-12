@@ -1,0 +1,23 @@
+.seating {
+    height: 35px;
+    width: 35px;
+    border-radius: 6px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.is-taken {
+        background-color: red;
+    }
+
+    &.is-suggested {
+        background-color: yellow;
+    }
+}
+
+.seats {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 15px;
+}
