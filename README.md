@@ -12,3 +12,5 @@ The project has 2 views:
 
 Since available seats are generated randomly, it means when selecting filters the available seats change each time - in real world where it comes from db the seats do not change.
 
+Most challenging part was learning React since previously I have been coding in plain JS/HTML/CSS.
+
