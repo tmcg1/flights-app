@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import './Seats.css';
+import { useParams } from "react-router-dom";
 
 function Seats() {
     const [seats, setSeats] = useState([]);
     const [suggestWindowSeat, setSuggestWindowSeat] = useState(false);
-    const [numberOfSeats, setNumberOfSeats] = useState(1)
+    const [numberOfSeats, setNumberOfSeats] = useState(1);
+    const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:8080/seats?suggestWindowSeat=${suggestWindowSeat}&numberOfSeats=${numberOfSeats}`)
+        fetch(`http://localhost:8080/seats?id=${id}&suggestWindowSeat=${suggestWindowSeat}&numberOfSeats=${numberOfSeats}`)
             .then(response => response.json())
             .then(data => setSeats(data));
     }, [suggestWindowSeat, numberOfSeats]);
@@ -44,7 +46,6 @@ function Seats() {
                         {seating.id}
                     </div>
                 )}
-
             </div>
         </>
     );

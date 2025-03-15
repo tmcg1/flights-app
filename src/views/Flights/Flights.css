@@ -1,6 +1,6 @@
 .card {
     background: white;
-    width: 400px;
+    width: 800px;
     height: 60px;
     border-radius: 6px;
     display: flex;
@@ -16,4 +16,15 @@
 
 .title {
     margin-top: 80px;
+}
+
+.label {
+    display: flex;
+    gap: 160px;
+    font-weight: bolder;
+}
+
+.inputs {
+    display: flex;
+    gap: 30px;
 }

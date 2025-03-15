@@ -10,8 +10,8 @@ function Flights() {
     const [departureFilter, setDepartureFilter] = useState("")
     const [priceFilter, setPriceFilter] = useState("")
 
-    function handleClick() {
-        navigate("/seats");
+    function handleClick(id) {
+        navigate(`/seats/${id}`);
     }
 
     useEffect(() => {
@@ -39,24 +39,20 @@ function Flights() {
     return (
         <>
             <h1 className="title">Flights</h1>
-            <div>
-                <label>From: </label>
+            <div className="label">
+                <div>From</div>
+                <div>To</div>
+                <div>Departure</div>
+                <div>Price</div>
+            </div>
+            <div className="inputs">
                 <input onChange={handleFromFilter}></input>
-            </div>
-            <div>
-                <label>To: </label>
                 <input onChange={handleToFilter}></input>
-            </div>
-            <div>
-                <label>Departure time: </label>
                 <input onChange={handleDepartureFilter}></input>
-            </div>
-            <div>
-                <label>Price: </label>
                 <input onChange={handlePriceFilter}></input>
             </div>
             {flights.map(flight =>
-                <div className="card" key={flight.id} onClick={handleClick}>
+                <div className="card" key={flight.id} onClick={() => handleClick(flight.id)}>
                     <div>{flight.from}</div>
                     <div>{flight.to}</div>
                     <div>{flight.departure}</div>
